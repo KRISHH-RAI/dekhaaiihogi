@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
 /* ========================================
    RESET & BASE STYLES
    ======================================== */
@@ -25,7 +27,7 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
@@ -351,18 +353,6 @@ body {
     box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2);
 }
 
-.team-avatar {
-    width: 8rem;
-    height: 8rem;
-    margin: 0 auto 1rem;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
 
 .team-name {
     font-size: 1.25rem;
@@ -405,12 +395,29 @@ body {
 }
 
 .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(156, 163, 175, 0.2);
     color: var(--text-secondary);
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+}
+
+.social-icon i,
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    color: currentColor;
 }
 
 .social-icon:hover {
     color: var(--accent-cyan);
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.6);
 }
 
 /* ========================================
@@ -812,4 +819,137 @@ textarea.form-input {
     .section {
         padding: 3rem 1rem;
     }
+}
+.team-avatar {
+    width: 190px;   /* Increased size */
+    height: 190px;  /* Increased size */
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #00f5ff;
+}
+
+.team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.team-card {
+    padding: 30px;
+}
+/* ================= TEAM CARD ================= */
+
+.team-card {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: #ffffff;
+    background: #111827;
+    transition: transform 0.4s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Background Image Layer */
+.team-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+/* Zoom effect on hover */
+.team-card:hover .team-image {
+    transform: scale(1.08);
+}
+
+/* Gradient Fade Overlay */
+.team-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.0) 25%,
+        rgba(0, 0, 0, 0.5) 55%,
+        rgba(0, 0, 0, 0.85) 80%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    z-index: 2;
+}
+
+/* Text Content Section */
+.team-content {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    z-index: 3;
+}
+
+.team-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.team-content .role {
+    font-size: 0.95rem;
+    color: #00f5ff;
+    margin-bottom: 10px;
+}
+
+.team-content .desc {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+.team-card {
+    position: relative;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    color: white;
+}
+
+.team-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 1;
+}
+
+.team-card:hover .team-image {
+    transform: scale(1.08);
+}
+
+.team-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.0) 25%,
+        rgba(0,0,0,0.5) 55%,
+        rgba(0,0,0,0.9) 100%
+    );
+    z-index: 2;
+}
+
+.team-content {
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+    right: 20px;
+    z-index: 3;
 }
