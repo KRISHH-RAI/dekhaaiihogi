@@ -3,113 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore innovative projects by Tomhackers, a professional hackathon team. From AI healthcare solutions to smart parking systems, see our cutting-edge technology work.">
     <title>Projects - Tomhackers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" as="style">
     <link rel="stylesheet" href="styles.css">
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <div class="logo">
-                <!-- OPTION 1: Image Logo (recommended) -->
-                <img src="logo.png" alt="Tomhackers Logo" class="logo-image">
-                
-                <!-- OPTION 2: Text Logo with Icon -->
-                <!-- Uncomment below and comment out the image above if you prefer text logo -->
-                <!-- <i data-lucide="code-2" class="logo-icon"></i>
-                <span class="logo-text">Tomhackers</span> -->
+                <picture>
+                    <source srcset="logo.webp" type="image/webp">
+                    <img src="logo.png" alt="Tomhackers Logo" class="logo-image" width="246" height="200">
+                </picture>
             </div>
             
-            <!-- Desktop Menu -->
             <div class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="team.html" class="nav-link">Team</a>
                 <a href="achievements.html" class="nav-link">Achievements</a>
-                <a href="hackathons.html" class="nav-link">Hackathons</a>
                 <a href="projects.html" class="nav-link">Projects</a>
-                <a href="contact.html" class="nav-link">Contact</a>
+               
             </div>
 
-            <!-- Mobile Menu Button -->
             <button class="menu-toggle" id="menuToggle">
                 <i data-lucide="menu"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="index.html" class="mobile-link">Home</a>
             <a href="team.html" class="mobile-link">Team</a>
             <a href="achievements.html" class="mobile-link">Achievements</a>
-            <a href="hackathons.html" class="mobile-link">Hackathons</a>
             <a href="projects.html" class="mobile-link">Projects</a>
-            <a href="contact.html" class="mobile-link">Contact</a>
+        
         </div>
     </nav>
 
-    <!-- Background Video -->
-    <video class="bg-video" autoplay muted loop playsinline>
-        <source src="background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section section-dark">
+        <div class="hero-bg">
+            <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+                <source src="background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">Solutions we've built at hackathons</p>
+                <h2 class="section-title">Our Projects</h2>
+                <p class="section-subtitle">Innovative solutions we've built</p>
             </div>
 
             <div class="projects-grid" id="projectsGrid">
-                <!-- Projects will be dynamically inserted here by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Tomhackers. Built with passion and innovation.</p>
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <h3>Connect With Us</h3>
+                    <div class="footer-social-links">
+                        <a href="https://github.com/Tom-Hackers" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tom-hackers" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:tomhackers.tech@gmail.com" class="footer-social-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 Tomhackers. Built with ❤️ by Tomhacker69</p>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
     <script>
-        // Initialize Lucide icons
         lucide.createIcons();
-        
-        // Initialize projects grid and animations on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProjects();
-            lucide.createIcons();
-            
-            // Setup scroll animations for cards
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -100px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-            
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(card);
-            });
-        });
     </script>
 </body>
 </html>
