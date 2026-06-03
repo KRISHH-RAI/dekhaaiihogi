@@ -1,1 +1,101 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the achievements and successes of Tomhackers in various hackathons and competitions. From finalists to grand finalists, see our journey.">
+    <title>Achievements - Tomhackers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" as="style">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <picture>
+                    <source srcset="logo.webp" type="image/webp">
+                    <img src="logo.png" alt="Tomhackers Logo" class="logo-image" width="246" height="200">
+                </picture>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="achievements.html" class="nav-link">Achievements</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+           
+            </div>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-link">Home</a>
+            <a href="team.html" class="mobile-link">Team</a>
+            <a href="achievements.html" class="mobile-link">Achievements</a>
+            <a href="projects.html" class="mobile-link">Projects</a>
+           
+        </div>
+    </nav>
+
+    <section id="achievements" class="section section-dark">
+        <div class="hero-bg">
+            <video class="bg-video" autoplay muted loop playsinline preload="metadata">
+                <source src="background.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Achievements</h2>
+                <p class="section-subtitle">Recognizing our team's successes</p>
+            </div>
+
+            <div class="achievements-grid" id="achievementsGrid">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <h3>Connect With Us</h3>
+                    <div class="footer-social-links">
+                        <a href="https://github.com/Tom-Hackers" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/tom-hackers" target="_blank" rel="noopener noreferrer" class="footer-social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="mailto:tomhackers.tech@gmail.com" class="footer-social-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2026 Tomhackers. Built with ❤️ by Tomhacker69</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
